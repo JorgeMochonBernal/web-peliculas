@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PeliculasResponse } from './../interfaces/cartelera';
+import { RouterModule } from '@angular/router';
+
+import { PeliculasServices } from './../services/peliculas.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
-    declarations: [],
+    declarations: [NavbarComponent],
     imports: [
-      CommonModule
-    ]
+      CommonModule,
+      RouterModule
+    ],
+    exports: [
+      NavbarComponent
+    ],
   })
 
 export class ComponentesModule {
-  constructor( private _peliServices) {
+  constructor( private _peliServices:PeliculasServices) {
     this._peliServices.getCartelera()
-      .subscribe((resp:PeliculasResponse) => {
+      .subscribe(resp => {
         console.log(resp);
       });
   }

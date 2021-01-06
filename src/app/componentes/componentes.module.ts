@@ -2,25 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { PeliculasServices } from './../services/peliculas.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SlideshowComponent } from './slideshow/slideshow/slideshow.component';
 
 @NgModule({
-    declarations: [NavbarComponent],
+    declarations: [
+      NavbarComponent,
+      SlideshowComponent
+    ],
     imports: [
       CommonModule,
       RouterModule
     ],
     exports: [
-      NavbarComponent
+      NavbarComponent,
+      SlideshowComponent
     ],
   })
 
 export class ComponentesModule {
-  constructor( private _peliServices:PeliculasServices) {
-    this._peliServices.getCartelera()
-      .subscribe(resp => {
-        console.log(resp);
-      });
+  constructor() {
   }
 }

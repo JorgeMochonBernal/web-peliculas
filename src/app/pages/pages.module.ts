@@ -9,11 +9,11 @@ import { BuscarComponent } from './buscar/buscar.component';
   declarations: [
     HomeComponent,
     PeliculaComponent,
-    BuscarComponent
+    BuscarComponent,
   ],
   imports: [
     CommonModule,
-    ComponentesModule
+    ComponentesModule,
   ],
 })
 

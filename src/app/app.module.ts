@@ -19,7 +19,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HttpClientModule,
     ComponentesModule,
-    PagesModule,
+    PagesModule
   ],
   providers: [
     PeliculasServices

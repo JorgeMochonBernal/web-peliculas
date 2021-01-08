@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { RatingModule } from 'ng-starrating';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { SlideshowComponent } from './slideshow/slideshow/slideshow.component';
@@ -14,7 +15,8 @@ import { PeliculasPosterGridComponent } from './peliculas-poster-grid/peliculas-
     ],
     imports: [
       CommonModule,
-      RouterModule
+      RouterModule,
+      RatingModule
     ],
     exports: [
       NavbarComponent,

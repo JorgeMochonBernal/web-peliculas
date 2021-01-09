@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 import { PagesModule } from './pages/pages.module';
 import { ComponentesModule } from './componentes/componentes.module';
-
-import { PeliculasServices } from './services/peliculas.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,15 +14,16 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
+
     AppRoutingModule,
     HttpClientModule,
     ComponentesModule,
     PagesModule
   ],
-  providers: [
-    PeliculasServices
-  ],
+  providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

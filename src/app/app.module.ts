@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 
 import { PagesModule } from './pages/pages.module';
 import { ComponentesModule } from './componentes/componentes.module';
+import { PipesModule } from './pipes/pipes.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +21,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HttpClientModule,
     ComponentesModule,
-    PagesModule
+    PagesModule,
+    PipesModule
   ],
   providers: [],
 

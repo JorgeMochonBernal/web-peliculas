@@ -12,10 +12,13 @@
                  class="form-control mr-2"
                  type="search"
                  placeholder="Buscar película"
-                 aria-label="Search">
+                 aria-label="Search"
+                 #txtBuscar
+                 (keyup.enter)="buscarPeli(txtBuscar.value)">
 
-          <button 
-                 class="btn btn-outline-success" type="submit">Buscar</button>
+          <button
+                 class="btn btn-outline-success" type="submit"
+                 (click)="buscarPeli(txtBuscar.value)">Buscar</button>
         </div>
       </div>
     </div>

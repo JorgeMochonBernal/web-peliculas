@@ -4,6 +4,8 @@ import { ComponentesModule } from './../componentes/componentes.module'
 import { HomeComponent } from './home/home.component';
 import { PeliculaComponent } from './pelicula/pelicula.component';
 import { BuscarComponent } from './buscar/buscar.component';
+import { PipesModule } from './../pipes/pipes.module';
+import { RatingModule } from 'ng-starrating';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { BuscarComponent } from './buscar/buscar.component';
   imports: [
     CommonModule,
     ComponentesModule,
+    PipesModule,
+    RatingModule
   ],
 })
 

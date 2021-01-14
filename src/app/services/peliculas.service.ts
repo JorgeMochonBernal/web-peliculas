@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { PeliculasResponse } from './../interfaces/cartelera';
+import { PeliculasResponse,Movie } from './../interfaces/cartelera';
+import { MovieData } from '../interfaces/movieData';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ export class PeliculasServices {
     }
   }
 
+  resetCarteleraPage() {
+    this.pageCartelera = 1;
+  }
+
   getCartelera():Observable<PeliculasResponse> {
     this.cargando = true;
     return this._httpClient.get<PeliculasResponse>(`${this.baseURL}/movie/now_playing`, {
@@ -36,8 +41,21 @@ export class PeliculasServices {
         this.cargando = false;
       })
     );
-
   }
-}
 
-//https://api.themoviedb.org/3/movie/now_playing?api_key=09485747367603a5b81841099c49e49e&language=en-ES&page=1
+  buscarPeli(texto:string):Observable <Movie[]> {
+    const params = {...this.params, page:'1', query: texto };
+    return this._httpClient.get<PeliculasResponse>(`${this.baseURL}/search/movie`, {
+      params
+    }).pipe(
+      map(resp => resp.results)
+    )
+  }
+
+  getPeliculaDetalle( id: string ) {
+
+     return this._httpClient.get<MovieData>(`${ this.baseUrl }/movie/${ id }`, {
+       params: this.params
+     });
+   }
+ }

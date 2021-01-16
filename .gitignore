@@ -5,3 +5,4 @@ dist/
 e2e/
 *.js
 .browserslisttrc
+assets/

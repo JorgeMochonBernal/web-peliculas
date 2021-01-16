@@ -4,6 +4,9 @@ dist/
 *.json
 e2e/
 *.js
-.browserslisttrc
+.browserslistrc
 assets/
 environments/
+.DS_Store
+.ico
+.editorconfig

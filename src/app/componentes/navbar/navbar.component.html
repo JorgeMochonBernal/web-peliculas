@@ -8,17 +8,15 @@
         </ul>
 
         <div class="d-flex">
-          <input
+          <input #txtBuscar
+                 (keyup.enter)="buscarPelicula( txtBuscar.value )"
                  class="form-control mr-2"
                  type="search"
                  placeholder="Buscar película"
-                 aria-label="Search"
-                 #txtBuscar
-                 (keyup.enter)="buscarPeli(txtBuscar.value)">
+                 aria-label="Search">
 
-          <button
-                 class="btn btn-outline-success" type="submit"
-                 (click)="buscarPeli(txtBuscar.value)">Buscar</button>
+          <button (click)="buscarPelicula( txtBuscar.value )"
+                 class="btn btn-outline-success" type="submit">Buscar</button>
         </div>
       </div>
     </div>

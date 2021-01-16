@@ -16,8 +16,6 @@ export class PeliculasPosterGridComponent implements OnInit {
   ngOnInit(): void {}
 
   onClick(movie: Movie) {
-    console.log(movie);
     this._router.navigate(['/pelicula',movie.id]);
   }
-
 }

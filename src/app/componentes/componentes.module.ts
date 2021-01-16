@@ -8,12 +8,14 @@ import { PipesModule } from './../pipes/pipes.module'
 import { NavbarComponent } from './navbar/navbar.component';
 import { SlideshowComponent } from './slideshow/slideshow/slideshow.component';
 import { PeliculasPosterGridComponent } from './peliculas-poster-grid/peliculas-poster-grid.component';
+import { CastSlideshowComponent } from './cast-slideshow/cast-slideshow.component';
 
 @NgModule({
     declarations: [
       NavbarComponent,
       SlideshowComponent,
-      PeliculasPosterGridComponent
+      PeliculasPosterGridComponent,
+      CastSlideshowComponent
     ],
     imports: [
       CommonModule,
@@ -24,7 +26,8 @@ import { PeliculasPosterGridComponent } from './peliculas-poster-grid/peliculas-
     exports: [
       NavbarComponent,
       SlideshowComponent,
-      PeliculasPosterGridComponent
+      PeliculasPosterGridComponent,
+      CastSlideshowComponent
     ],
   })
 

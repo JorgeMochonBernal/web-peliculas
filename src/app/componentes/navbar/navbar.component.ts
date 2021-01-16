@@ -6,20 +6,21 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
 export class NavbarComponent implements OnInit {
 
-  constructor( private _router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  buscarPeli(texto:string) {
+  buscarPelicula(texto: string) {
     texto = texto.trim();
 
-    if(texto.length === 0) {
+    if (texto.length === 0) {
       return;
     }
 
-    this._router.navigate(['/buscar', texto]);
+    this.router.navigate(['/buscar', texto]);
   }
 }

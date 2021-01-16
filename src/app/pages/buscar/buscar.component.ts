@@ -10,18 +10,21 @@ import { Movie } from '../../interfaces/cartelera';
 })
 export class BuscarComponent implements OnInit {
 
-  public texto: string = "";
-  public movies: Movie[];
+  public texto: string = '';
+  public movies: Movie[] = [];
 
-  constructor( private _activatedRoute:ActivatedRoute,
-               private _peliService:PeliculasServices) { }
+  constructor(  private activatedRoute: ActivatedRoute,
+                private peliculasService: PeliculasServices) { }
 
   ngOnInit(): void {
-    this._activatedRoute.params.subscribe(params => {
+
+    this.activatedRoute.params.subscribe( params => {
+
       this.texto = params.texto;
-      this._peliService.buscarPeli(params.texto).subscribe(movies => {
+
+      this.peliculasService.buscarPeliculas( params.texto ).subscribe( movies => {
         this.movies = movies;
+      })
     });
-  });
   }
 }

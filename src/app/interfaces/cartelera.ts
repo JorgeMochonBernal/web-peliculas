@@ -1,10 +1,9 @@
-
-export interface PeliculasResponse {
-    dates:         Dates;
-    page:          number;
+export interface CarteleraResponse {
     results:       Movie[];
-    total_pages:   number;
+    page:          number;
     total_results: number;
+    dates:         Dates;
+    total_pages:   number;
 }
 
 export interface Dates {
@@ -13,23 +12,24 @@ export interface Dates {
 }
 
 export interface Movie {
+    popularity:        number;
+    vote_count:        number;
+    video:             boolean;
+    poster_path:       string;
+    id:                number;
     adult:             boolean;
     backdrop_path:     string;
-    genre_ids:         number[];
-    id:                number;
     original_language: OriginalLanguage;
     original_title:    string;
-    overview:          string;
-    popularity:        number;
-    poster_path:       string;
-    release_date:      Date;
+    genre_ids:         number[];
     title:             string;
-    video:             boolean;
     vote_average:      number;
-    vote_count:        number;
+    overview:          string;
+    release_date:      Date;
 }
 
 export enum OriginalLanguage {
     En = "en",
     Es = "es",
+    Ko = "ko",
 }
